@@ -2,7 +2,8 @@ import traceback
 import os
 import streamlit as st
 from migration_engine import run_migration
-
+st.write("LOCAL_API_URL:", repr(os.getenv("LOCAL_API_URL")))
+st.write("LOCAL_API_TOKEN exists:", os.getenv("LOCAL_API_TOKEN") is not None)
 st.set_page_config(
     page_title="Data Entrega Migration Portal",
     layout="wide"
