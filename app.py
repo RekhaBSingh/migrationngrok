@@ -2,8 +2,6 @@ import traceback
 import os
 import streamlit as st
 from migration_engine import run_migration
-import streamlit as st
-import os
 
 st.write("LOCAL_API_URL (os.getenv):", repr(os.getenv("LOCAL_API_URL")))
 st.write("LOCAL_API_TOKEN (os.getenv):", os.getenv("LOCAL_API_TOKEN"))
