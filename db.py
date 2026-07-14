@@ -90,10 +90,8 @@ def get_sql_server_connection(
     Returns a pyodbc connection to SQL Server.
     """
 
-    import streamlit as st
-
-bridge_url = os.getenv("LOCAL_API_URL") or st.secrets.get("LOCAL_API_URL")
-bridge_token = os.getenv("LOCAL_API_TOKEN") or st.secrets.get("LOCAL_API_TOKEN")
+    bridge_url = os.getenv("LOCAL_API_URL")
+    bridge_token = os.getenv("LOCAL_API_TOKEN")
     if bridge_url or bridge_token:
         if not bridge_url or not bridge_token:
             raise EnvironmentError("LOCAL_API_URL and LOCAL_API_TOKEN must both be configured for SQLConnect.")
