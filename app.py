@@ -2,8 +2,17 @@ import traceback
 import os
 import streamlit as st
 from migration_engine import run_migration
-st.write("LOCAL_API_URL:", repr(os.getenv("LOCAL_API_URL")))
-st.write("LOCAL_API_TOKEN exists:", os.getenv("LOCAL_API_TOKEN") is not None)
+import streamlit as st
+import os
+
+st.write("LOCAL_API_URL (os.getenv):", repr(os.getenv("LOCAL_API_URL")))
+st.write("LOCAL_API_TOKEN (os.getenv):", os.getenv("LOCAL_API_TOKEN"))
+
+try:
+    st.write("LOCAL_API_URL (st.secrets):", st.secrets.get("LOCAL_API_URL"))
+    st.write("LOCAL_API_TOKEN exists (st.secrets):", bool(st.secrets.get("LOCAL_API_TOKEN")))
+except Exception as e:
+    st.write("st.secrets error:", e)
 st.set_page_config(
     page_title="Data Entrega Migration Portal",
     layout="wide"
