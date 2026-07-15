@@ -5,7 +5,7 @@ from typing import Any
 import requests
 
 class RemoteSqlConnection:
-    def __init__(self, base_url: str, token: str, timeout: int = 60):
+    def __init__(self, base_url: str, token: str, timeout: int = 600):
         self.base_url, self.timeout = base_url.rstrip("/"), timeout
         self.session = requests.Session()
         self.session.headers.update({"X-API-Token": token})
