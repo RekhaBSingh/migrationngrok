@@ -19,7 +19,7 @@ with st.form("migration_form"):
 
     using_bridge = bool(os.getenv("LOCAL_API_URL"))
     if using_bridge:
-        st.info("Using the configured SQLConnect bridge through ngrok. SQL Server credentials stay on the local machine.")
+        # st.info("Using the configured SQLConnect bridge through ngrok. SQL Server credentials stay on the local machine.")
         server_name = port = database_name = username = password = ""
     else:
         st.subheader("SQL Server Connection")
